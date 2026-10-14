@@ -1,0 +1,5 @@
+data:
+  num_frames: 16
+  frame_size: [224, 224]
+  num_workers: 4
+  pin_memory: true

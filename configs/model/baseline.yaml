@@ -1,0 +1,7 @@
+model:
+  name: SignBridge-Baseline-v1
+  hidden_dim: 256
+  temporal_layers: 4
+  temporal_heads: 8
+  dropout: 0.1
+  use_pose: false

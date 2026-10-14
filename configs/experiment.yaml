@@ -1,0 +1,36 @@
+experiment:
+  name: baseline_rgb_pose
+  seed: 42
+  output_dir: experiments/runs
+
+data:
+  train_manifest: data/manifests/train.jsonl
+  val_manifest: data/manifests/val.jsonl
+  num_frames: 16
+  frame_size: [112, 112]
+  num_workers: 0
+  pin_memory: false
+  labels: [] # Populate explicitly from the dataset manifest; never infer split-specific class IDs.
+
+model:
+  name: SignBridge-Baseline-v1
+  num_classes: 2
+  hidden_dim: 128
+  temporal_layers: 2
+  temporal_heads: 4
+  dropout: 0.1
+  use_pose: false
+  pose_dim: 0
+
+training:
+  batch_size: 4
+  epochs: 3
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  amp: true
+  checkpoint_every: 1
+  resume: null
+
+evaluation:
+  topk: [1, 5]

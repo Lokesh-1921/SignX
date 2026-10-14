@@ -1,0 +1,6 @@
+augmentation:
+  temporal_crop: false
+  frame_drop_probability: 0.0
+  brightness: 0.0
+  contrast: 0.0
+  horizontal_flip: false # Enable only after linguistic review for the chosen language/task.
